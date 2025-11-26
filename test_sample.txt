@@ -1,0 +1,31 @@
+[
+   {
+        "sample":  {
+                       "problem_id":  1,
+                       "problem":  "Which is the third car on the left hand side of the black Mercedes-Benz?",
+                       "problem_type":  "multiple choice",
+                       "original_question_type":  "multi-hop_spatial_reasoning",
+                       "options":  [
+                                       "A. A Citro?n.",
+                                       "B. A Geeely.",
+                                       "C. A Honda.",
+                                       "D. A BMW."
+                                   ],
+                       "solution":  "A",
+                       "path":  "./dataset/rgb_video_2025_09_03_15_35_03.mp4",
+                       "scene_type":  "outdoor"
+                   }
+    },
+     {
+        "sample":  {
+                       "problem_id":  2,
+                       "problem":  "What\u0027s the length in centimeter (cm) of the silver Wuling vehicle?",
+                       "problem_type":  "regression",
+                       "original_question_type":  "object_size",
+                       "options":  null,
+                       "solution":  "442",
+                       "path":  "./dataset/rgb_video_2025_09_03_15_35_03.mp4",
+                       "scene_type":  "outdoor"
+                   }
+    }
+]
