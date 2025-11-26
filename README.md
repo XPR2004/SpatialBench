@@ -40,9 +40,45 @@ $env:OPENAI_API_KEY="sk-your-api-key"
 $env:OPENAI_API_BASE="https://api.openai-proxy.org/v1"
 ```
 
+### 3. Download Video Dataset
+
+Due to GitHub file size limits, the video files are hosted on Hugging Face. You can download them using Git.
+
+First, ensure you have **Git LFS** installed:
+```bash
+git lfs install
+```
+
+Then, clone the dataset repository and place the videos in the `dataset/` folder:
+
+```bash
+# Clone the Hugging Face repository to a temporary directory
+git clone https://huggingface.co/datasets/XPR2004/SpatialBench temp_hf_download
+
+# Move the video files from the downloaded repository to your local dataset folder
+# Linux / macOS / Git Bash:
+mv temp_hf_download/dataset/* dataset/
+rm -rf temp_hf_download
+
+# Windows PowerShell:
+# Move-Item -Path "temp_hf_download\dataset\*" -Destination "dataset\" -Force
+# Remove-Item -Recurse -Force temp_hf_download
+```
+
+The directory structure should look like this:
+```
+SpatialBench/
+├── dataset/
+│   ├── video_1.mp4
+│   ├── video_2.mp4
+│   └── ...
+├── benchmark_vision_base64.py
+└── ...
+```
+
 ## Dataset Files
 
-The repository includes the following dataset files ready for use:
+The repository includes the benchmark question files (JSON/Text format). **Note: The corresponding video files must be downloaded separately (see Setup step 3).**
 
 - **`QA.txt`**: The standard benchmark dataset containing spatial reasoning questions.
 - **`QA_fewshot.txt`**: A dataset variant designed for "Deep Guide" mode, where problems are paired with video examples for few-shot learning.
@@ -135,4 +171,3 @@ The evaluation script calculates scores based on the following logic:
 - **Multiple Choice**: Matches the model's output option (A/B/C/D). Correct = 1 point, Incorrect = 0 points.
 - **Regression** (e.g., Distance Estimation): Uses the Mean Relative Accuracy (MRA) algorithm. Scores range from 0 to 1 based on the relative error between the predicted value and the ground truth.
 - **Weighted Overall Score**: Calculates the final score by weighting different task categories based on their difficulty and importance.
-
