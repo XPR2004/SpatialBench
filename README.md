@@ -16,9 +16,18 @@ SpatialBench is a benchmark suite designed to evaluate the video spatial underst
 
 ## Setup
 
-### 1. Install Dependencies
+### Prerequisites
 
-Ensure Python 3.8+ is installed, then install the required libraries:
+Before starting, ensure you have the following installed:
+- **Python 3.8+**
+- **Git** (Required for downloading the dataset)
+  - **Windows**: [Download Git for Windows](https://git-scm.com/download/win). During installation, make sure to select "Git LFS (Large File Support)".
+  - **Linux (Ubuntu/Debian)**: `sudo apt-get install git git-lfs`
+  - **macOS**: `brew install git git-lfs`
+
+### 1. Install Python Dependencies
+
+After installing Python, install the required libraries:
 
 ```bash
 pip install openai opencv-python numpy tqdm httpx
@@ -53,16 +62,7 @@ Then, clone the dataset repository and place the videos in the `dataset/` folder
 
 ```bash
 # Clone the Hugging Face repository to a temporary directory
-git clone https://huggingface.co/datasets/XPR2004/SpatialBench temp_hf_download
-
-# Move the video files from the downloaded repository to your local dataset folder
-# Linux / macOS / Git Bash:
-mv temp_hf_download/dataset/* dataset/
-rm -rf temp_hf_download
-
-# Windows PowerShell:
-# Move-Item -Path "temp_hf_download\dataset\*" -Destination "dataset\" -Force
-# Remove-Item -Recurse -Force temp_hf_download
+git clone https://huggingface.co/datasets/XPR2004/SpatialBench
 ```
 
 The directory structure should look like this:
