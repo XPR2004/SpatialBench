@@ -2,7 +2,7 @@
 
 <img src="images/framework.png" width="1000">
 
-SpatialBench is a benchmark suite designed to evaluate the video spatial understanding capabilities of Large Multimodal Models (LMMs). This project uses an OpenAI-compatible API interface to send video frames and related spatial reasoning questions to models, automatically evaluating their response accuracy.
+**SpatialBench** is a benchmark suite designed to evaluate the video spatial understanding capabilities of Multimodal Large Language Models (MLLMs). This project uses an OpenAI-compatible API interface to send video frames and related spatial reasoning questions to models, automatically evaluating their response accuracy.
 
 ## Features
 
@@ -171,4 +171,5 @@ The evaluation script calculates scores based on the following logic:
 - **Multiple Choice**: Matches the model's output option (A/B/C/D). Correct = 1 point, Incorrect = 0 points.
 - **Regression** (e.g., Distance Estimation): Uses the Mean Relative Accuracy (MRA) algorithm. Scores range from 0 to 1 based on the relative error between the predicted value and the ground truth.
 - **Weighted Overall Score**: Calculates the final score by weighting different task categories based on their difficulty and importance.
+
 
