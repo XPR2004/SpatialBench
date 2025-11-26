@@ -1,6 +1,6 @@
 # SpatialBench: A Benchmark for Video Spatial Understanding
 
-<img src="images/framework.png" width="1000">
+<img src="images/framework.png">
 
 **SpatialBench** is a benchmark suite designed to evaluate the video spatial understanding capabilities of Multimodal Large Language Models (MLLMs). This project uses an OpenAI-compatible API interface to send video frames and related spatial reasoning questions to models, automatically evaluating their response accuracy.
 
@@ -34,14 +34,13 @@ First make sure **Git LFS** is installed:
 git lfs install
 ```
 
-Then clone the dataset repo and copy the videos into this project's `dataset/` directory:
+Then clone the SpatialBench repository from Hugging Face:
 
 ```bash
-# Clone the Hugging Face repository to a temporary directory
 git clone https://huggingface.co/datasets/XPR2004/SpatialBench
 ```
 
-Your directory layout should end up like this:
+After cloning, make sure the directory layout looks like this:
 ```
 SpatialBench/
 ├── dataset/
