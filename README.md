@@ -25,17 +25,44 @@ Before starting, ensure you have the following installed:
   - **Linux (Ubuntu/Debian)**: `sudo apt-get install git git-lfs`
   - **macOS**: `brew install git git-lfs`
 
-### 1. Install Python Dependencies
+### 1. Get Started: Download Dataset and Scripts
 
-After installing Python, install the required libraries:
+Because GitHub limits large file storage, the videos live on Hugging Face, so download them before moving on.
+
+First make sure **Git LFS** is installed:
+```bash
+git lfs install
+```
+
+Then clone the dataset repo and copy the videos into this project's `dataset/` directory:
+
+```bash
+# Clone the Hugging Face repository to a temporary directory
+git clone https://huggingface.co/datasets/XPR2004/SpatialBench
+```
+
+Your directory layout should end up like this:
+```
+SpatialBench/
+├── dataset/
+│   ├── video_1.mp4
+│   ├── video_2.mp4
+│   └── ...
+├── benchmark_vision_base64.py
+└── ...
+```
+
+### 2. Install Python Dependencies
+
+After pulling the assets, install the libraries required to run the scripts:
 
 ```bash
 pip install openai opencv-python numpy tqdm httpx
 ```
 
-### 2. Configure Environment Variables
+### 3. Configure Environment Variables
 
-Before running the scripts, you need to set the API-related environment variables.
+Finish the setup by configuring the API-related environment variables.
 
 **Linux / macOS:**
 ```bash
@@ -49,36 +76,9 @@ $env:OPENAI_API_KEY="sk-your-api-key"
 $env:OPENAI_API_BASE="https://api.openai-proxy.org/v1"
 ```
 
-### 3. Download Dataset and Scripts
-
-Due to GitHub file size limits, the video files are hosted on Hugging Face. You can download them using Git.
-
-First, ensure you have **Git LFS** installed:
-```bash
-git lfs install
-```
-
-Then, clone the dataset repository and place the videos in the `dataset/` folder:
-
-```bash
-# Clone the Hugging Face repository to a temporary directory
-git clone https://huggingface.co/datasets/XPR2004/SpatialBench
-```
-
-The directory structure should look like this:
-```
-SpatialBench/
-├── dataset/
-│   ├── video_1.mp4
-│   ├── video_2.mp4
-│   └── ...
-├── benchmark_vision_base64.py
-└── ...
-```
-
 ## Dataset Files
 
-The repository includes the benchmark question files (JSON/Text format). **Note: The corresponding video files must be downloaded separately (see Setup step 3).**
+The repository includes the benchmark question files (JSON/Text format). **Note: The corresponding video files must be downloaded separately (see Setup step 1).**
 
 - **`QA.txt`**: The standard benchmark dataset containing spatial reasoning questions.
 - **`QA_fewshot.txt`**: A dataset variant designed for "Deep Guide" mode, where problems are paired with video examples for few-shot learning.
