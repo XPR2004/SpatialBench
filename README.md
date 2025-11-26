@@ -49,7 +49,7 @@ $env:OPENAI_API_KEY="sk-your-api-key"
 $env:OPENAI_API_BASE="https://api.openai-proxy.org/v1"
 ```
 
-### 3. Download Video Dataset
+### 3. Download Dataset and Scripts
 
 Due to GitHub file size limits, the video files are hosted on Hugging Face. You can download them using Git.
 
@@ -171,3 +171,4 @@ The evaluation script calculates scores based on the following logic:
 - **Multiple Choice**: Matches the model's output option (A/B/C/D). Correct = 1 point, Incorrect = 0 points.
 - **Regression** (e.g., Distance Estimation): Uses the Mean Relative Accuracy (MRA) algorithm. Scores range from 0 to 1 based on the relative error between the predicted value and the ground truth.
 - **Weighted Overall Score**: Calculates the final score by weighting different task categories based on their difficulty and importance.
+
