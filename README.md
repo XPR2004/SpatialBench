@@ -2,8 +2,6 @@
 
 <img src="images/framework.png">
 
-Code and dataset for the CVPR 2026 paper "SpatialBench: Benchmarking Multimodal Large Language Models for Spatial Cognition"
-
 <a href='https://arxiv.org/abs/2511.21471'><img src='https://img.shields.io/badge/Paper-PDF-red'></a>
 
 **SpatialBench** is a benchmark suite designed to evaluate the video spatial understanding capabilities of Multimodal Large Language Models (MLLMs). This project uses an OpenAI-compatible API interface to send video frames and related spatial reasoning questions to models, automatically evaluating their response accuracy.
@@ -189,4 +187,5 @@ If you find our project interesting, we hope you can star our repo and cite our 
       url={https://arxiv.org/abs/2511.21471}, 
 }
 ```
+
 
